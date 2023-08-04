@@ -1,0 +1,55 @@
+
+// form color and borders
+
+$form-color: #f8f9fa;
+$form-border-raius: 5px;
+$form-border-shodow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+
+// button
+
+$hover-border-color: #80bdff;
+$hover-box-shodow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+
+
+
+.container {
+
+    .col-md-6 {
+      background-color: $form-color;
+      padding: 20px;
+      border-radius: $form-border-raius;
+      box-shadow: $form-border-shodow
+      
+      h2 {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      
+      form {
+        
+        .form-group {
+          
+          input {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ced4da;
+            border-radius: 3px;
+            margin-bottom: 10px;
+            &:hover {
+              border-color: $hover-border-color;
+              box-shadow: $form-border-shodow;
+            }
+          }
+        }
+        
+        button {
+            margin-top: 20px;
+          width: 100%;
+        }
+      }
+      
+      p.text-center {
+        margin-top: 10px;
+      }
+    }
+  }

@@ -1,0 +1,26 @@
+.container .col-md-6 {
+  background-color: #f8f9fa;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1) h2;
+  box-shadow-text-align: center;
+  box-shadow-margin-bottom: 20px;
+}
+.container .col-md-6 form .form-group input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ced4da;
+  border-radius: 3px;
+  margin-bottom: 10px;
+}
+.container .col-md-6 form .form-group input:hover {
+  border-color: #80bdff;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+.container .col-md-6 form button {
+  margin-top: 20px;
+  width: 100%;
+}
+.container .col-md-6 p.text-center {
+  margin-top: 10px;
+}/*# sourceMappingURL=index.css.map */
