@@ -11,9 +11,6 @@ $(document).ready(function () {
     $('.btn').on('mousedown', function (e) {
 
         let rippleEl = $('<span class="btn-ripple"></span>').appendTo(this);
-        console.log("clicked")
-        console.log(rippleEl)
-
         let pos = $(this).offset();
         let width = $(this).outerWidth();
         let height = $(this).outerHeight();
@@ -27,5 +24,55 @@ $(document).ready(function () {
         $(this).remove();
     });
 
+
+    const container = document.querySelectorAll(".container");
+    const loginForm = container[0];
+    const registerForm = container[1]
+
+    function switchToRegistrationForm() {
+        $(loginForm).animate({
+            opacity: 0,
+            marginLeft: '-100%',
+
+        }, 1000, function () {
+            $(loginForm).hide();
+            $(registerForm).css({
+                opacity: 0,
+                marginLeft: '100%',
+
+            }).show().animate({
+                opacity: 1,
+                marginLeft: '0'
+            }, 1000);
+        });
+    }
+
+    function switchToLoginForm() {
+        $(registerForm).animate({
+            opacity: 0,
+            marginLeft: '100%',
+
+        }, 1000, function () {
+            $(registerForm).hide();
+            $(loginForm).css({
+                opacity: 0,
+                marginLeft: '-100%',
+
+            }).show().animate({
+                opacity: 1,
+                marginLeft: '0'
+            }, 1000);
+        });
+    }
+
+    $('.login-link').on('click', function (e) {
+        e.preventDefault();
+        switchToRegistrationForm();
+    });
+
+    $('.reg-link').on('click', function (e) {
+        e.preventDefault();
+        switchToLoginForm();
+    });
 
 });

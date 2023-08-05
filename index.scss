@@ -19,11 +19,13 @@ $hover-box-shodow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
 
 .container {
 
+
     .col-md-6 {
         background-color: $form-color;
         padding: 20px;
         border-radius: $form-border-raius;
         box-shadow: $form-border-shodow;
+
 
         h2 {
             text-align: center;
@@ -63,4 +65,8 @@ $hover-box-shodow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
             margin-top: 10px;
         }
     }
+}
+
+.active {
+    display: none;
 }

@@ -36,4 +36,8 @@
 }
 .container .col-md-6 p.text-center {
   margin-top: 10px;
+}
+
+.active {
+  display: none;
 }/*# sourceMappingURL=index.css.map */
