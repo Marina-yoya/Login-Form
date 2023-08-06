@@ -75,4 +75,17 @@ $(document).ready(function () {
         switchToLoginForm();
     });
 
+    function showSuccessPopup() {
+        $('#successPopup').fadeIn('slow', function () {
+            setTimeout(function () {
+                $('#successPopup').fadeOut('slow');
+            }, 3000);
+        });
+    }
+
+    $('.btn-register').on('click', function (e) {
+        e.preventDefault();
+        showSuccessPopup();
+    });
+
 });
