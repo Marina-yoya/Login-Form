@@ -88,4 +88,66 @@ $(document).ready(function () {
         showSuccessPopup();
     });
 
+
+
+    function validateForm() {
+        let emailInput = $("#floatingInput");
+        let passwordInput = $("#floatingPassword");
+        let email = emailInput.val();
+        let password = passwordInput.val();
+        let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        let isValid = true;
+
+        if (email.trim() === '' || !emailPattern.test(email)) {
+            emailInput.addClass("shake-animation");
+            emailInput.css({
+                "border-color": "red",
+                "border-style": "dashed"
+            });
+            isValid = false;
+        } else {
+            emailInput.removeClass("shake-animation");
+            emailInput.css({
+                "border-color": "",
+                "border-style": ""
+            });
+        }
+
+        if (password.trim() === '' || password.length < 6) {
+            passwordInput.addClass("shake-animation");
+            passwordInput.css({
+                "border-color": "red",
+                "border-style": "dashed"
+            });
+            isValid = false;
+        } else {
+            passwordInput.removeClass("shake-animation");
+            passwordInput.css({
+                "border-color": "",
+                "border-style": ""
+            });
+        }
+
+        emailInput.on("animationend", function () {
+            emailInput.removeClass("shake-animation");
+        });
+
+        passwordInput.on("animationend", function () {
+            passwordInput.removeClass("shake-animation");
+        });
+
+        return isValid;
+    }
+
+    $("#loginForm").on("submit", function (event) {
+        event.preventDefault();
+        if (validateForm()) {
+            console.log("Form is valid.");
+        }
+    });
+
+
+
 });
+
+
