@@ -139,9 +139,34 @@ $(document).ready(function () {
         return isValid;
     }
 
+
+    function openAccordion() {
+        $(".toggle").css("display", "block");
+        $('.div-content:first').slideDown();
+
+        $('.div-toggle').click(function () {
+            const container = $(this).parent();
+            const content = container.find('.div-content');
+
+            if (content.is(':hidden')) {
+                $('.div-content').slideUp();
+                content.slideDown();
+                $('.toggle').css('border', '1px solid #ccc');
+
+            } else {
+                content.slideUp();
+
+            }
+        });
+
+    }
+
+
     $("#loginForm").on("submit", function (event) {
         event.preventDefault();
         if (validateForm()) {
+            $('#loginPage').hide();
+            openAccordion();
             console.log("Form is valid.");
         }
     });
